@@ -3,6 +3,7 @@ import PokemonCollection from "./PokemonCollection";
 import PokemonForm from "./PokemonForm";
 import Search from "./Search";
 import { Container } from "semantic-ui-react";
+import { SearchProvider } from "./SearchContext";
 
 function PokemonPage() {
   const [pokeCards, setPokeCards] = useState([]);
@@ -21,9 +22,11 @@ function PokemonPage() {
       <br />
       <PokemonForm />
       <br />
-      <Search />
-      <br />
-      <PokemonCollection pokeCards={pokeCards} />
+      <SearchProvider>
+        <Search />
+        <br />
+        <PokemonCollection pokeCards={pokeCards} />
+      </SearchProvider>
     </Container>
   );
 }

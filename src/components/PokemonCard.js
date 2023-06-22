@@ -15,7 +15,7 @@ function PokemonCard({ card }) {
   }
 
   return (
-    <Card onClick={handleClick}>
+    <Card key={id} onClick={handleClick}>
       <div>
         <div className="image">
           {showBack ? (
